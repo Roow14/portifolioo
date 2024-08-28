@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Romario Alcantara">
+    <meta name="description" content="Portfólio da desenvolvedora front-end Romario Alcantara">
+    <meta name="keywords" content="portfolio, html, front-end, desenvolvimento, css, javascript">
+    <title>Romario Alcantara</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: rgb(44, 68, 107); /* Azul claro para o fundo da página */
+        }
+        /* Adicione aqui seus estilos gerais */
+    </style>
+</head>
+<body>
+    <!-- Seções que serão carregadas via JavaScript -->
+    <div id="menu"></div>
+    <div id="banner"></div>
+    <div id="sobre"></div>
+    <div id="experiencia"></div>
+    <div id="projetos"></div>
+    <div id="footer"></div>
+
+    <script>
+        // Função para carregar o conteúdo HTML
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+        }
+
+        // Carregar os arquivos HTML nos elementos correspondentes
+        loadHTML('menu.html', 'menu');
+        loadHTML('banner.html', 'banner');
+        loadHTML('sobre.html', 'sobre');
+        loadHTML('experiencia.html', 'experiencia');
+        loadHTML('projetos.html', 'projetos');
+        loadHTML('footer.html', 'footer');
+    </script>
+
+    <script>
+        // Função para o carrossel
+        let slideIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-item');
+            slideIndex = (slideIndex + step + slides.length) % slides.length;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>

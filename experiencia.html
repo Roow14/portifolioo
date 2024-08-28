@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiência - Carrossel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(44, 68, 107); /* Azul claro para o fundo da página */
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            top: 50px;
+        }
+
+        .carousel {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #ffffff; /* Fundo branco para o carrossel */
+            color: rgb(44, 68, 107);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #e3d0b3; /* Fundo claro para os itens do carrossel */
+        }
+
+        .carousel-item h2 {
+            margin-top: 0;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px; /* Aumentar o tamanho das setas */
+            border-radius: 50%;
+            width: 50px; /* Tamanho do botão */
+            height: 50px; /* Tamanho do botão */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: -55px; /* Distância da seta à esquerda */
+        }
+
+        .next {
+            right: -55px; /* Distância da seta à direita */
+        }
+
+        .titulox h1 {
+            color: rgb(44, 68, 107);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .titulox {
+            background-color: #e3d0b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulox">
+        <h1>Experiência</h1>
+    </div>
+
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <h2>Desenvolvedor Front End</h2>
+                    <p><strong>Nome da Empresa:</strong> Fisiopeti Clínica De Reabilitação</p>
+                    <p>Minha primeira oportunidade na área da programação surgiu quando fui contratado para o suporte técnico em uma clínica. Acabei assumindo a responsabilidade pelo suporte de um sistema privado já existente. Este sistema era voltado para o cadastro e agendamento de pacientes. Curiosamente, mesmo sem ter acesso ao código-fonte, decidi recriar completamente o sistema do zero, utilizando HTML e CSS.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Desenvolvedor Web Full Stack</h2>
+                    <p><strong>Nome da Empresa:</strong> Forecast Web</p>
+                    <p>Como desenvolvedor, este é meu primeiro contrato assinado. Fui contratado para a posição de front-end junior. O sistema da Fisiopeti foi originalmente desenvolvido pela Forecast Web. Tive que entrar em contato com a Forecast e, após avaliarem positivamente o meu trabalho, me fizeram uma proposta. Decidi aceitar, e este é o meu emprego atual.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Função WordPress</h2>
+                    <p><strong>Nome da Empresa:</strong> Bassh</p>
+                    <p>Neste papel, trabalhei com WordPress, assumindo responsabilidades relacionadas ao desenvolvimento e manutenção de sites baseados na plataforma. A experiência envolveu a personalização de temas, plugins e a garantia de que os sites funcionassem corretamente em diferentes dispositivos e navegadores.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-item');
+            slideIndex = (slideIndex + step + slides.length) % slides.length;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>
