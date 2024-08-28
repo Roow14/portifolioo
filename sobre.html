@@ -1,53 +1,68 @@
 <style> 
 
-    .sobre h2 {
-        color:  #e3d0b3;
-        position: relative;
-        left: 5%;
-        width: 70%;
-        font-size: 30px;
-             
-    }
-    .sobre p {
-        color: black;
-        width: 90%;
-        font-size: 18px;
-        position: relative;
-        left: 5%;
-    }
+.sobre h2 {
+    color: #e3d0b3;
+    position: relative;
+    left: 5%;
+    width: 70%;
+    font-size: 30px;
+}
+
+.sobre p {
+    color: #e3d0b3;
+    width: 90%;
+    font-size: 18px;
+    position: relative;
+    left: 5%;
+}
+
+.sobre .imagem img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço abaixo da imagem */
+    margin-bottom: 25px; /* Espaço abaixo da imagem */
+    position: relative;
+    left: 5%;
+}
+
+@media only screen and (min-width: 400px) {
     .sobre .imagem img {
-        max-width: 30%; /* Garante que a imagem não ultrapasse o contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        display: block; /* Remove o espaço abaixo da imagem */
-        margin-bottom: 25px; /* Espaço abaixo da imagem */
         position: relative;
-        left: 5%;
-        
+        top: 20px; /* Ajustado para um espaçamento mais sutil */
     }
-  
+    .sobre h2 {
+        position: relative;
+        left: 20%; /* Ajustado para centralizar melhor */
+        font-size: 28px;
+        top: -40px; /* Ajustado para um espaçamento mais sutil */
+    }
+}
 
-    @media only screen and (min-width: 768px) {
-        .sobre img {
-            max-width: 60%; /* Define um tamanho máximo para a imagem */
-            float: left;
-            margin-right: 25px; /* Espaço à direita da imagem */
-            margin-bottom: 25px; /* Espaço abaixo da imagem */
-        }
+@media only screen and (min-width: 768px) {
+    .sobre .imagem img {
+        max-width: 60%; /* Define um tamanho máximo para a imagem */
+        margin-right: 25px; /* Espaço à direita da imagem */
+        margin-bottom: 25px; /* Espaço abaixo da imagem */
+        float: left;
     }
+}
 
-    @media only screen and (min-width: 1200px) {
-        .sobre img {
-            max-width: 40%; /* Reduz a largura máxima da imagem */
-            margin-right: 50px; /* Espaço à direita da imagem */
-        }
+@media only screen and (min-width: 1200px) {
+    .sobre .imagem img {
+        max-width: 30%; /* Reduz a largura máxima da imagem */
+        margin-right: 50px; /* Espaço à direita da imagem */
+        position: relative;
+        top: -50px;
     }
+}
 
-    @media only screen and (min-width: 1600px) {
-        .sobre img {
-            max-width: 35%; /* Reduz ainda mais a largura máxima da imagem */
-            margin-right: 50px; /* Espaço à direita da imagem */
-        }
+@media only screen and (min-width: 1600px) {
+    .sobre .imagem img {
+        position: relative;
+        top: 0; /* Ajustado para melhor alinhamento */
+        width: 423px
     }
+}
 </style>
 
 <span class="anchor" id="sobre"></span>
@@ -56,7 +71,7 @@
     <div class="sobre"> 
         <div class="imagem"> 
         <img src="imagens/eu2.jpg" alt="Romário Alcântara Campos"></div> 
-        <h2>Romário Alcântara Campos</h2>
+        
         <p>Com mais de uma década de experiência em suporte de TI, tenho me dedicado a transformar problemas técnicos em soluções eficientes, sempre com um foco em oferecer a melhor experiência ao usuário.</p>
         <p>Recentemente, dei um passo significativo em minha carreira ao me especializar em desenvolvimento frontend, combinando meu conhecimento profundo de sistemas com uma paixão por criar interfaces intuitivas e atraentes.</p>
         <p>🎓 Formação</p>
