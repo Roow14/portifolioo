@@ -94,11 +94,32 @@
         .titulox {
             background-color: #e3d0b3;
         }
-        
+        @media only screen and (min-width: 375px){
+            .titulox h1 {
+                position: relative;
+                left: 40%;
+                width: 100px;
+            }
+            .titulox {
+                position: relative;
+                top: 30px;
+            }
+
+        }
+        @media only screen and (min-width: 1200px) {
+            .titulox h1 {
+                
+                position: relative;
+                left: 40%;
+            }
+        }   
 @media only screen and (min-width: 1600px) {
     .titulox h1 {
         position: relative;
-        left: -50px;
+        left: 45%;
+        width: 100px;
+        height: 30px;
+        top: -30px;
     }
 }
     </style>
